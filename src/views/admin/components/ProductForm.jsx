@@ -40,7 +40,7 @@ const FormSchema = Yup.object().shape({
     .of(Yup.string())
     .min(1, 'Please enter at least 1 keyword for this product.'),
   sizes: Yup.array()
-    .of(Yup.number())
+    .of(Yup.string())
     .min(1, 'Please enter a size for this product.'),
   isFeatured: Yup.boolean(),
   isRecommended: Yup.boolean(),
@@ -175,7 +175,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     defaultValue={values.keywords.map((key) => ({ value: key, label: key }))}
                     name="sizes"
                     iid="sizes"
-                    type="number"
+                    // type=""
                     isMulti
                     disabled={isLoading}
                     placeholder="Create/Select Sizes"
